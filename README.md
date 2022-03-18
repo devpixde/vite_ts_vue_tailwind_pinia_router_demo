@@ -1,11 +1,80 @@
-# Vue 3 + Typescript + Vite
+# Vue 3 + Typescript + Tailwind + Vite + Pinia + Router - Demo
 
-This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## About The Project
 
-## Recommended IDE Setup
+This is a project with examples to learn and show how to implement features in above mentioned technologies.
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+##  Built With
+* Vite
+* Vue 3
+* Typescript
+* Tailwind
+* Pinia
+* Vue-Router (4)
+* Docker
 
-## Type Support For `.vue` Imports in TS
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
+## Getting Started
+
+### Prerequisites
+
+Have either node.js (16) with yarn or Docker installed
+
+### Installation
+
+#### With Local Node.js (16)
+
+* Clone project
+* yarn install
+
+
+#### With Docker
+
+In case you have docker installed you do not need to have nodejs installed on your mashine to start developing.
+
+* Clone project
+* cd into projects folder
+* Create interactive container 
+
+Mac:
+```shell
+docker run --name vite-vue-tailwind-pinia-router-demo-container -it -v "${PWD}:/app" -w "/app" -p 3000:3000 vite-vue-tailwind-pinia-router-demo-image
+```
+
+Windows:
+```shell
+docker run --name vite-vue-tailwind-pinia-router-demo-container -it -v "%cd%:/app" -w "/app" -p 3000:3000 vite-vue-tailwind-pinia-router-demo-image
+```
+
+* Interact with the container in the same way as on your local mashine:
+
+Develop:
+```shell
+npm run dev
+```
+
+Build production version:
+```shell
+npm run build
+```
+
+```shell
+docker stop vite-vue-tailwind-pinia-router-demo-container 
+```
+
+```shell
+docker start vite-vue-tailwind-pinia-router-demo-container 
+```
+
+```shell
+docker exec -it vite-vue-tailwind-pinia-router-demo-container  "/bin/bash"
+```
+
+```shell
+docker exec -it vite-vue-tailwind-pinia-router-demo-container  "/bin/bash"
+```
+
+If you need more packages
+```shell
+yarn add <my-package
+```
