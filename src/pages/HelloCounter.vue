@@ -10,12 +10,14 @@
 
   <HelloCounterOptionsApi :global-counter="globalCounter" @increment-global="incrementGlobal"
                           @decrement-global="decrementGlobal"></HelloCounterOptionsApi>
-
+  <HelloCounterCompositonApi :global-counter="globalCounter" @increment-global="incrementGlobal"
+                             @decrement-global="decrementGlobal"></HelloCounterCompositonApi>
 </template>
 
 <script setup lang="ts">
 import {ref} from 'vue'
 import HelloCounterOptionsApi from "../components/HelloCounterOptionsApi.vue";
+import HelloCounterCompositonApi from "../components/HelloCounterCompositonApi.vue";
 
 const globalCounter = ref(0);
 

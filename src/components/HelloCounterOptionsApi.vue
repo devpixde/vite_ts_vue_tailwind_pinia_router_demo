@@ -1,8 +1,8 @@
 <template>
   <div class="bg-purple-100 p-4">
-    <h1>HelloCounter in Options API</h1>
+    <h1>HelloCounter implemented in "Options API"</h1>
     <div class="flex items-center">
-      <div class="basis-1/6">
+      <div class="basis-1/5">
         <span class="font-bold">
         GlobalCounter:
         </span>
@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="flex items-center">
-      <div class="basis-1/6">
+      <div class="basis-1/5">
          <span class="font-bold">
         LocalCounter:
         </span>
@@ -33,7 +33,6 @@
 </template>
 
 <script lang="ts">
-
 import {defineComponent} from "vue";
 
 export default defineComponent({
@@ -84,11 +83,5 @@ export default defineComponent({
   mounted() {
     this.localMessage += '<li>mounted'
   }
-
-
 });
 </script>
-
-<style scoped>
-
-</style>
