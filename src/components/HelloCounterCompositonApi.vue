@@ -12,35 +12,6 @@ const localCounter = ref(0);
 const localMessage = ref('<li>init');
 const updateCounter = ref(0);
 
-// we don't have a created or onCreated hook any more
-// but can do the same just here...
-localMessage.value += '<li>created';
-
-const incrementGlobal = () => {
-  emit('increment-global');
-};
-
-const decrementGlobal = () => {
-  emit('decrement-global');
-};
-
-const incrementLocal = () => {
-  localCounter.value++;
-};
-
-const decrementLocal = () => {
-  localCounter.value--;
-};
-
-const onUpdate = () => {
-  updateCounter.value++;
-  localMessage.value = localMessage.value.replace(/<li>updated \(\d+\)/g, '') + `<li>updated (${updateCounter.value})`
-};
-
-onMounted(() => {
-  localMessage.value += '<li>mounted'
-});
-
 watch(
     () => {
       return localCounter.value
@@ -54,6 +25,35 @@ watch(
     },
     onUpdate
 )
+
+function incrementGlobal () {
+  emit('increment-global');
+};
+
+function decrementGlobal () {
+  emit('decrement-global');
+};
+
+function incrementLocal () {
+  localCounter.value++;
+};
+
+function decrementLocal () {
+  localCounter.value--;
+};
+
+function onUpdate () {
+  updateCounter.value++;
+  localMessage.value = localMessage.value.replace(/<li>updated \(\d+\)/g, '') + `<li>updated (${updateCounter.value})`
+};
+
+// we don't have a created or onCreated hook any more
+// but can do the same just here...
+localMessage.value += '<li>created';
+
+onMounted(() => {
+  localMessage.value += '<li>mounted'
+});
 
 </script>
 
