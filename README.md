@@ -34,6 +34,13 @@ In case you have docker installed you do not need to have nodejs installed on yo
 
 * Clone project
 * cd into projects folder
+
+* Build the image
+```shell
+docker build -t vite-vue-tailwind-pinia-router-demo-image .
+```
+
+
 * Create interactive container 
 
 Mac:

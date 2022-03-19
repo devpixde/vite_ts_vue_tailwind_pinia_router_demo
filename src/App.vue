@@ -4,8 +4,8 @@
 
 <template>
   <Header></Header>
-  <div class="container mx-auto">
-  <router-view></router-view>
+  <div class="container mx-auto content-container">
+    <router-view></router-view>
  </div>
 </template>
 
