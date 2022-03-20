@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import {reactive, ref, nextTick, computed, onUpdated, onMounted} from "vue";
+import {reactive, ref, nextTick, computed, onUpdated, onMounted, watch} from "vue";
 
 /*
   static data:
@@ -103,6 +103,14 @@ const nowComputed = computed(() => new Date().toString());
 const nowByMethod = function () {
   return new Date().toString();
 };
+
+/*
+* watch( source, callback )
+* */
+
+watch(() => props.uk_time, (newVal, oldVal) => {
+  console.log('watch uktime', newVal, oldVal);
+})
 
 
 nextTick(() => {
