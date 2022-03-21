@@ -1,30 +1,4 @@
-<template>
-  <div class="bg-purple-100 p-4">
-    <h1>Show syntax and features of a "Composition API" component"</h1>
-    <div>Static: {{ msg }}</div>
-    <div>Reactive: {{ time }}</div>
-    <div>UK Time: {{ props.uk_time }}</div>
-    <div>state.count: {{ state.count }}
-      <button class="btn-primary" @click="state.count++">count++</button>
-    </div>
-    <div class="mt-4">
-      <input class="mr-4" type="text" v-model="message" placeholder="your message">
-      <button class="btn-primary" @click="sendMessage">Send a Message</button>
-      <span>Sent messages count: {{ sentMessagesCount }}</span>
-      <button class="btn-primary" @click="showMessages=!showMessages">
-        {{ showMessages ? 'Hide' : 'Show all messages' }}
-      </button>
-    </div>
-    <ol v-if="showMessages">
-      <li v-for="message in sentMessages">{{ message }}</li>
-    </ol>
 
-    <div class="mt-4">
-      <div>nowComputed will be cached, no update: {{ nowComputed }}</div>
-      <div>nowByMethod updates on every tick: {{ nowByMethod() }}</div>
-    </div>
-  </div>
-</template>
 
 <script setup lang="ts">
 import {reactive, ref, nextTick, computed, onUpdated, onMounted, watch} from "vue";
@@ -119,6 +93,36 @@ nextTick(() => {
 })
 
 </script>
+
+
+<template>
+  <div class="bg-purple-100 p-4">
+    <h1>Show syntax and features of a "Composition API" component"</h1>
+    <div>Static: {{ msg }}</div>
+    <div>Reactive: {{ time }}</div>
+    <div>UK Time: {{ props.uk_time }}</div>
+    <div>state.count: {{ state.count }}
+      <button class="btn-primary" @click="state.count++">count++</button>
+    </div>
+    <div class="mt-4">
+      <input class="mr-4" type="text" v-model="message" placeholder="your message">
+      <button class="btn-primary" @click="sendMessage">Send a Message</button>
+      <span>Sent messages count: {{ sentMessagesCount }}</span>
+      <button class="btn-primary" @click="showMessages=!showMessages">
+        {{ showMessages ? 'Hide' : 'Show all messages' }}
+      </button>
+    </div>
+    <ol v-if="showMessages">
+      <li v-for="message in sentMessages">{{ message }}</li>
+    </ol>
+
+    <div class="mt-4">
+      <div>nowComputed will be cached, no update: {{ nowComputed }}</div>
+      <div>nowByMethod updates on every tick: {{ nowByMethod() }}</div>
+    </div>
+  </div>
+</template>
+
 
 <style scoped>
 
